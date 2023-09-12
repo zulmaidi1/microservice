@@ -1,4 +1,4 @@
-package com.zulmaidi.orderservice.model;
+package com.zulmaidi.orderservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Product {
-    private String id;
-    private String name;
+public class OrderLineResponse {
+    private Long id;
     private String skuCode;
-    private String description;
     private BigDecimal price;
+    private Integer quantity;
+    private ProductResponse product;
 }

@@ -12,9 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class OrderLineRequest {
-    private Long id;
     private String skuCode;
     private BigDecimal price;
     private Integer quantity;
-
 }

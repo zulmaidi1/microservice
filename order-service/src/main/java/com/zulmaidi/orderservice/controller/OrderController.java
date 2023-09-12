@@ -1,6 +1,7 @@
 package com.zulmaidi.orderservice.controller;
 
 import com.zulmaidi.orderservice.dto.OrderRequest;
+import com.zulmaidi.orderservice.dto.OrderResponse;
 import com.zulmaidi.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ public class OrderController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public String create(@RequestBody OrderRequest request){
+    public OrderResponse create(@RequestBody OrderRequest request){
         return orderService.placeOrder(request);
     }
 }

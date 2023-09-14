@@ -8,6 +8,7 @@ import com.zulmaidi.orderservice.repository.OrderRepository;
 import com.zulmaidi.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -20,6 +21,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     ProductClient productClient;
     @Override
+    @Transactional
     public OrderResponse placeOrder(OrderRequest request) {
         Order order = Order.builder()
                 .orderNumber(UUID.randomUUID().toString())

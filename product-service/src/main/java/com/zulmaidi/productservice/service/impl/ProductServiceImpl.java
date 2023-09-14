@@ -75,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductResponse findBySkuCode(String sku) {
-        Product product = productRepository.findFistBySkuCode(sku).orElseThrow();
+        Product product = productRepository.findFistBySkuCode(sku).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "product not found"));
 
         return toProductResponse(product);
     }

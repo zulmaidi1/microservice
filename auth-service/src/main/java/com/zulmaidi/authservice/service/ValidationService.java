@@ -1,2 +1,9 @@
-package com.zulmaidi.authservice.service;public class ValdationService {
+package com.zulmaidi.authservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ValidationService {
+
 }
